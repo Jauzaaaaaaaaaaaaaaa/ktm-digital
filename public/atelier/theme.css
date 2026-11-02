@@ -1,0 +1,54 @@
+/* DATA MAHASISWA KARTU: kartu tanda mahasiswa. Hologram, cip, sudut membulat. */
+:root { --ink: #16123a; --bg: #eeecfb; --vi: #5a3df0; --dm: #6b678e; --holo: linear-gradient(115deg, #7d5cff, #39c6f0 38%, #7ff0c5 62%, #ffb3e6);
+  --at-accent: #16123a; --at-on-accent: #fff; --at-deep: #5a3df0; --at-mono: "DM Mono", monospace; }
+html { background: var(--bg); }
+body, body.at { margin: 0; min-height: 100svh; font-family: "Sora", system-ui, sans-serif; color: var(--ink); background: radial-gradient(60% 50% at 90% 0, rgba(90, 61, 240, .22), transparent 70%), radial-gradient(50% 40% at 0 100%, rgba(57, 198, 240, .2), transparent 70%); background-attachment: fixed; }
+.at-curtain__a, .at-curtain__b { border-radius: 0; inset: 0; }
+.at-curtain__cap { color: #fff; }
+.ktm-spin { perspective: 1000px; }
+.ktm-spin .ktm-card { width: min(78vw, 340px); animation: ktm-flip 1.4s var(--at-out) both; }
+@keyframes ktm-flip { from { transform: rotateY(-200deg) scale(.7); opacity: 0; } 30% { opacity: 1; } to { transform: none; } }
+
+.ktm-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 18px clamp(16px, 4vw, 48px); }
+.ktm-top.is-stuck { background: rgba(238, 236, 251, .86); }
+.ktm-brand { font-weight: 800; color: var(--ink) !important; text-decoration: none; letter-spacing: -.02em; }
+.ktm-brand span { margin-left: 5px; font-weight: 400; color: var(--vi); }
+.ktm-top nav { display: flex; gap: 6px; }
+.ktm-top nav a { padding: 8px 14px; border-radius: 99px; font-size: .84rem; color: var(--ink) !important; text-decoration: none; transition: background-color .25s; }
+.ktm-top nav a:hover { background: rgba(90, 61, 240, .13); }
+h1 { margin: 0; font-weight: 800; font-size: clamp(2.5rem, 8vw, 6rem); line-height: 1; letter-spacing: -.045em; }
+h1 em { font-style: normal; background: var(--holo); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ktm-kick { margin: 0 0 12px; font: 400 .76rem "DM Mono", monospace; letter-spacing: .08em; color: var(--dm); }
+.ktm-sub { margin: 16px 0 0; color: var(--dm); }
+.ktm-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border: 0; border-radius: 99px; background: var(--ink); color: #fff !important; font: 600 .88rem "Sora", sans-serif; text-decoration: none; cursor: pointer; transition: transform .45s var(--at-out), background-color .25s; }
+.ktm-btn:hover { background: var(--vi); transform: translateY(-3px); }
+.ktm-hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(24px, 5vw, 70px); min-height: 100svh; padding: 100px clamp(16px, 4vw, 48px) 40px; }
+@media (max-width: 820px) { .ktm-hero { grid-template-columns: 1fr; } }
+.ktm-main { width: min(1240px, 100% - 2 * clamp(16px, 4vw, 48px)); margin-inline: auto; padding-block: clamp(100px, 14vh, 130px) 60px; }
+.ktm-narrow { width: min(620px, 100% - 32px); }
+.ktm-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-bottom: 26px; }
+.ktm-msg { padding: 12px 18px; border-radius: 14px; background: #fff; box-shadow: inset 3px 0 0 var(--vi); }
+.ktm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 16px; }
+.ktm-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px; overflow: hidden; border-radius: 20px; background: #fff; color: var(--ink); box-shadow: 0 24px 50px -30px rgba(40, 20, 130, .55); transition: transform .6s var(--at-out), box-shadow .3s; }
+.ktm-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: var(--holo); }
+.ktm-grid .ktm-card:hover { transform: translateY(-6px) rotate(-.7deg); box-shadow: 0 34px 60px -30px rgba(40, 20, 130, .7); }
+.ktm-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font: 400 .74rem "DM Mono", monospace; color: var(--dm); }
+.ktm-chip { width: 42px; height: 31px; border-radius: 7px; background: linear-gradient(135deg, #f1d58a, #bd9440); box-shadow: inset 0 0 0 1px rgba(90, 60, 0, .3); }
+.ktm-card b { font-size: 1.28rem; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
+.ktm-card code { font: 500 .88rem "DM Mono", monospace; letter-spacing: .08em; color: var(--vi); }
+.ktm-card dl { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; margin: 16px 0 0; padding-top: 12px; border-top: 1px dashed rgba(22, 18, 58, .2); }
+.ktm-card dt { font: 400 .68rem "DM Mono", monospace; color: var(--dm); }
+.ktm-card dd { margin: 2px 0 0; font-size: .86rem; overflow-wrap: anywhere; }
+.ktm-card footer { display: flex; gap: 14px; margin-top: 14px; font-size: .84rem; }
+.ktm-card footer a { color: var(--vi) !important; }
+.ktm-card footer a + a { color: #c0322e !important; }
+.ktm-card--demo { background: var(--ink); color: #fff; min-height: 230px; justify-content: flex-end; }
+.ktm-card--demo .ktm-card__top { margin-bottom: auto; color: #bcb8e4; }
+.ktm-card--demo code { color: #7ff0c5; }
+.ktm-empty { color: var(--dm); }
+.ktm-form { display: grid; gap: 14px; margin-top: 22px; padding: clamp(20px, 4vw, 32px); border-radius: 22px; background: #fff; box-shadow: 0 24px 50px -30px rgba(40, 20, 130, .5); }
+.ktm-field { display: grid; gap: 6px; }
+.ktm-field label { font: 400 .72rem "DM Mono", monospace; color: var(--dm); }
+.ktm-field input { width: 100%; min-height: 48px; padding: 10px 14px; border: 1.5px solid rgba(22, 18, 58, .16); border-radius: 12px; background: transparent; color: var(--ink); font: inherit; box-sizing: border-box; }
+.ktm-field input:focus { outline: 0; border-color: var(--vi); }
+.ktm-field input[readonly] { background: var(--bg); color: var(--dm); }
